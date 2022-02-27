@@ -1,0 +1,4 @@
+beautifulsoup4==4.10.0
+Pillow==9.0.1
+PyPDF2==1.26.0
+requests==2.22.0
