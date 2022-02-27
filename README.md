@@ -13,3 +13,11 @@ In the embedded reader every page is displayed using an image file. This image i
 pip install -r adn/requeriments.txt
 python adn/adn.py
 ```
+
+## Diario Occidente
+
+Occidente publishes its online version in https://occidente.co/version-impresa-{yyyy}/ where yyyy is the current year. There is only one issue on weekends.
+
+```bash
+python occidente/occidente.py
+```
