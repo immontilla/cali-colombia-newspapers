@@ -2,20 +2,20 @@ import socket
 import requests
 import urllib.request
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from PyPDF2 import PdfFileMerger, PdfFileReader
 from PIL import Image
 
 
 def day_month_year(pattern):
-    now = datetime.now()
+    now = datetime.now()-timedelta(2)
     return now.strftime(pattern)
 
 
 def magazine_urls():
     names = ['adn_cali_-_', 'adn_cali_']
-    patterns = ['%d%m%Y','%Y%m%d']
+    patterns = ['%d%m%Y', '%Y%m%d']
     urls = []
     for name in names:
         for pattern in patterns:
@@ -23,18 +23,27 @@ def magazine_urls():
     return urls
 
 
-def images_magazine_url():
+def get_source():
     magazine_url = None
     urls = magazine_urls()
     for url in urls:
-        request = requests.get(url)
-        print('Trying to get', url,'...')
-        if request.status_code == 200:
-            magazine_url = url
-            break
+        print('Trying to get', url, '...')
+        try:
+            request = requests.get(url)
+            if request.status_code == 200:
+                magazine_url = url
+                break
+        except Exception:
+            pass
     if magazine_url is None:
         return None
-    source = request.text
+    return request.text
+
+
+def images_magazine_url():
+    source = get_source()
+    if source is None:
+        return None
     soup = BeautifulSoup(source, features="html.parser")
     image = soup.find("meta", attrs={'property': 'og:image'})
     link = image['content']

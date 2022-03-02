@@ -9,8 +9,7 @@ day = now.day
 if now.weekday() == 6:
     day = day - 1
 main_url = 'https://occidente.co/wp-content/version-impresa/' + year
-pdf_filename = 'diario-pdf-' + \
-    str(day) + '-de-' + month_name + '-de-' + year + '.pdf'
+pdf_filename = 'diario-pdf-' + str(day) + '-de-' + month_name + '-de-' + year + '.pdf'
 pdf_url = main_url + '/' + pdf_filename
 opener = urllib.request.build_opener()
 opener.addheaders = [('User-agent', 'Mozilla/5.0')]
