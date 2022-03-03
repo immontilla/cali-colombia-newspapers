@@ -2,14 +2,14 @@ import socket
 import requests
 import urllib.request
 import os
-from datetime import datetime, timedelta
+from datetime import datetime
 from bs4 import BeautifulSoup
 from PyPDF2 import PdfFileMerger, PdfFileReader
 from PIL import Image
 
 
 def day_month_year(pattern):
-    now = datetime.now()-timedelta(2)
+    now = datetime.now()
     return now.strftime(pattern)
 
 
