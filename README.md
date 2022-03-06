@@ -16,8 +16,24 @@ python adn/adn.py
 
 ## Diario Occidente
 
-Occidente publishes its online version in https://occidente.co/version-impresa-{yyyy}/ where yyyy is the current year. There is only one issue on weekends.
+Occidente publishes its online version in https://occidente.co/version-impresa-{yyyy}/ where yyyy is the current year. There is only one edition on weekend.
 
 ```bash
 python occidente/occidente.py
+```
+
+## Diario El Pais
+
+This newspaper publishes its online version daily at https://www.elpais.com.co.
+
+```bash
+python pais/pais.py
+```
+
+## Publimetro
+
+Publimetro publishes its online version on mondays, wednesdays and fridays at https://www.readmetro.com/es/colombia/cali/archive/.
+
+```bash
+python publimetro/publimetro.py
 ```
