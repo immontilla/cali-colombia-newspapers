@@ -6,10 +6,15 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from PyPDF2 import PdfFileMerger, PdfFileReader
 from PIL import Image
-
+from datetime import datetime, timedelta
+import urllib.request
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('-d', '--days', type=int, default=0, choices=range(0, 8), help='days ago from today(0) to a week (7)')
+args = parser.parse_args()
 
 def day_month_year(pattern):
-    now = datetime.now()
+    now = datetime.now() - timedelta(days=args.days)
     return now.strftime(pattern)
 
 

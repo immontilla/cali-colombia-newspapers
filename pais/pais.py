@@ -1,6 +1,11 @@
 import urllib.request
-from datetime import datetime
-now = datetime.now()
+from datetime import datetime, timedelta
+import urllib.request
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('-d', '--days', type=int, default=0, choices=range(0, 7), help='days ago up to 6 days')
+args = parser.parse_args()
+now = datetime.now() - timedelta(days=args.days)
 date = now.strftime('%Y%m%d')
 pdf_filename = 'elpais_' + date + '.pdf'
 pdf_url = 'https://www.elpais.com.co/elpais/servicios/newstand/files/elpais/' + date + '/pdf_complete/' + pdf_filename

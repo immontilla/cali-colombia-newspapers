@@ -3,6 +3,8 @@
 
 # Colombian newspapers
 
+It is possible to download an old issue of any newspaper using -d as a script argument.
+
 ## ADN Cali
 
 ADN publishes its online version in an embedded reader at https://issuu.com/diarioadn.co/docs/adn_cali_-_{ddmmyyyy} where dd, mm and yyyy depends on the current date. To read this newspaper offline, I built a python script to do so. 
