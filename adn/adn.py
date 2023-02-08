@@ -19,7 +19,7 @@ def day_month_year(pattern):
 
 
 def magazine_urls():
-    names = ['adn_cali_-_', 'adn_cali_']
+    names = ['adn-cali-','adn_cali_-_', 'adn_cali_']
     patterns = ['%d%m%Y', '%Y%m%d']
     urls = []
     for name in names:
