@@ -11,7 +11,7 @@ ADN publishes its online version in an embedded reader at https://issuu.com/diar
 
 In the embedded reader every page is displayed using an image file. This image is converted to PDF and appended into a unique PDF file using Python.
 
-Windows users needs to clone in WSL. Some Python libs like Pillow stop working. Sorry.
+Windows users needs to clone this repo in WSL. Some Python libs like Pillow stop working. Sorry.
 
 ```bash
 pip install -r adn/requeriments.txt
@@ -21,6 +21,8 @@ python adn/adn.py
 ## Diario Occidente
 
 Occidente publishes its online version in https://occidente.co/version-impresa-{yyyy}/ where yyyy is the current year. There is only one edition on weekend.
+
+In some systems, run sudo locale-gen es_ES.UTF-8 could be necessary.
 
 ```bash
 python occidente/occidente.py
