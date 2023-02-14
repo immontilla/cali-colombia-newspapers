@@ -22,6 +22,8 @@ opener.addheaders = [('User-agent', 'Mozilla/5.0')]
 urllib.request.install_opener(opener)
 try:
     urllib.request.urlretrieve(pdf_url, pdf_filename)
+    print('Trying to download', pdf_filename,'from',pdf_url)
+    urllib.request.urlretrieve(pdf_url, pdf_filename)
     print(pdf_filename, 'downloaded')
 except Exception:
     print(pdf_url, 'not found. Visit', main_url, 'to review')

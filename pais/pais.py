@@ -13,7 +13,7 @@ opener = urllib.request.build_opener()
 opener.addheaders = [('User-agent', 'Mozilla/5.0')]
 urllib.request.install_opener(opener)
 try:
-    print('Downloading', pdf_filename,'...')
+    print('Downloading', pdf_filename,'from',pdf_url)
     urllib.request.urlretrieve(pdf_url, pdf_filename)
     print(pdf_filename, 'downloaded')
 except Exception as ee:

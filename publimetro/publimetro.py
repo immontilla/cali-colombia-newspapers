@@ -12,6 +12,7 @@ opener = urllib.request.build_opener()
 opener.addheaders = [('User-agent', 'Mozilla/5.0')]
 urllib.request.install_opener(opener)
 try:
+    print('Trying to download', pdf_filename,'...')
     pdf_filename = 'publimetro_' + pdf_filename
     urllib.request.urlretrieve(pdf_url, pdf_filename)
     print(pdf_filename, 'downloaded')
