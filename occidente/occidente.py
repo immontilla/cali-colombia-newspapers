@@ -9,12 +9,13 @@ parser.add_argument('-d', '--days', type=int, default=0, choices=range(0, 8), he
 args = parser.parse_args()
 now = datetime.now() - timedelta(days=args.days)
 year = now.strftime('%Y')
+month = now.strftime('%m')
 locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
 month_name = now.strftime('%B')
 day = now.day
 if now.weekday() == SUNDAY:
     day = day - 1
-main_url = 'https://occidente.co/wp-content/version-impresa/' + year
+main_url = 'https://occidente.co/wp-content/uploads/' + year + '/' + month + '/'
 pdf_filename = 'diario-pdf-' + str(day) + '-de-' + month_name + '-de-' + year + '.pdf'
 pdf_url = main_url + '/' + pdf_filename
 opener = urllib.request.build_opener()
